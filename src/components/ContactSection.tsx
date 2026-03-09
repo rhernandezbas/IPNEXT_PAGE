@@ -40,7 +40,7 @@ const contacts = [
 const locations = [
   {
     city: "Mercedes",
-    address: "Calle 27 Nº 279",
+    address: "Calle 27 Nº 291",
     mapsUrl: "https://maps.app.goo.gl/npvWHGyUd72hBt9v6",
   },
   {

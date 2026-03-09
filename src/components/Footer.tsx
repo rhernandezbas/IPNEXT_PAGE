@@ -32,7 +32,7 @@ export default function Footer() {
           <span className="font-semibold text-ipnext-muted">IPNEXT S.A.</span>
           {" · "}CUIT: 30-70849985-0
           {" · "}Persona Jurídica
-          {" · "}Domicilio fiscal: Calle 27 Nº 279, Mercedes, Provincia de Buenos Aires, Argentina
+          {" · "}Domicilio fiscal: Calle 27 Nº 291, Mercedes, Provincia de Buenos Aires, Argentina
         </p>
       </div>
     </footer>
