@@ -33,11 +33,26 @@ La landing page tiene como objetivos principales:
 - **99.9%** uptime garantizado
 - **1 Gbps** velocidad máxima disponible
 
+## Otros Servicios
+
+Además de internet, IPNEXT ofrece:
+
+- **Cámaras de Seguridad**: instalación de sistemas de videovigilancia IP (HD/4K), acceso remoto, grabación en la nube
+- **Alarmas y Control de Acceso**: sistemas perimetrales con monitoreo 24/7, sensores, biométrico
+- **VPS & Hosting Profesional**: servidores virtuales con SSD NVMe, IPs dedicadas, cPanel/Plesk
+
 ## Canales de Contacto
 
 - **WhatsApp**: chat directo con asesor
 - **Teléfono**: atención lunes a sábado de 8 a 20 hs
 - **Email/Web**: formulario de consulta con respuesta en el día
+
+## Oficinas Físicas
+
+| Ciudad | Dirección | Google Maps |
+|--------|-----------|-------------|
+| Mercedes | Calle 27 Nº 279 | https://maps.app.goo.gl/npvWHGyUd72hBt9v6 |
+| Chivilcoy | Colón 75 | https://maps.app.goo.gl/nPc6R5tEgqDy1Ma76 |
 
 ## Planes Disponibles
 

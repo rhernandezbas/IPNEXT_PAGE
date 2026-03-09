@@ -124,6 +124,70 @@ Feature: IPNEXT Landing Page
     Then la respuesta debe colapsarse
 
   # ═══════════════════════════════════════
+  # EMPRESAS — PLANES DEDICADOS
+  # ═══════════════════════════════════════
+
+  @status:implemented
+  @changed:2026-03-09
+  Scenario: Ver sección de planes empresariales
+    Given que el visitante navega a la sección de empresas
+    Then debe ver el título "Planes Dedicados para tu Negocio"
+    And debe ver 3 cards de planes empresariales:
+      | Plan        | Velocidad | Badge             |
+      | PYME        | 200 Mbps  | IDEAL PARA PYMES  |
+      | CORPORATIVO | 500 Mbps  | MÁS ELEGIDO       |
+      | ENTERPRISE  | 1 Gbps    | MÁXIMA CAPACIDAD  |
+    And cada plan debe mostrar "Simétrico — igual bajada y subida"
+    And el plan CORPORATIVO debe estar destacado como "RECOMENDADO"
+
+  @status:implemented
+  @changed:2026-03-09
+  Scenario: CTAs de planes empresariales abren WhatsApp con mensaje del plan
+    Given que el visitante ve los planes empresariales
+    When hace click en el CTA de un plan
+    Then debe abrirse WhatsApp con el mensaje:
+      | Plan        | Mensaje pre-llenado                                              |
+      | PYME        | "...me interesa el plan Empresarial PYME de 200 Mbps simétrico" |
+      | CORPORATIVO | "...me interesa el plan Empresarial Corporativo de 500 Mbps"    |
+      | ENTERPRISE  | "...me interesa el plan Empresarial Enterprise de 1 Gbps"       |
+
+  # ═══════════════════════════════════════
+  # OTROS SERVICIOS
+  # ═══════════════════════════════════════
+
+  @status:implemented
+  @changed:2026-03-09
+  Scenario: Ver sección de otros servicios
+    Given que el visitante navega a la sección de otros servicios
+    Then debe ver el título "Otros Servicios"
+    And debe ver 3 cards de servicios:
+      | Servicio                 | Tag       | Ícono       |
+      | Cámaras de Seguridad     | SEGURIDAD | camera      |
+      | Alarmas y Control Acceso | SEGURIDAD | shield-alert |
+      | VPS & Hosting Profesional| HOSTING   | server      |
+    And debe ver un banner inferior "¿Necesitás una solución personalizada?"
+
+  @status:implemented
+  @changed:2026-03-09
+  Scenario: CTAs de otros servicios abren WhatsApp con mensaje del servicio
+    Given que el visitante ve los otros servicios
+    When hace click en el CTA de un servicio
+    Then debe abrirse WhatsApp con el mensaje correspondiente al servicio
+
+  # ═══════════════════════════════════════
+  # WHATSAPP — BOTONES CON MENSAJE PREDEFINIDO
+  # ═══════════════════════════════════════
+
+  @status:implemented
+  @changed:2026-03-09
+  Scenario: Todos los botones CTA llevan a WhatsApp con mensaje del plan
+    Given que el visitante ve cualquier plan o servicio
+    When hace click en un botón "¡Lo Quiero!" o CTA
+    Then debe abrirse WhatsApp al número +5492346523280
+    And el mensaje debe estar pre-llenado con el nombre del plan o servicio correspondiente
+    And el mensaje debe comenzar con "¡Hola! Vengo de la web..."
+
+  # ═══════════════════════════════════════
   # CONTACT
   # ═══════════════════════════════════════
 
@@ -137,6 +201,17 @@ Feature: IPNEXT Landing Page
       | WhatsApp   | message-circle | Escribinos     |
       | Teléfono   | phone          | Llamar ahora   |
       | Email/Web  | mail           | Consultar      |
+
+  @status:implemented
+  @changed:2026-03-09
+  Scenario: Ver oficinas físicas en la sección de contacto
+    Given que el visitante está en la sección de contacto
+    Then debe ver la subsección "Nuestras Oficinas"
+    And debe ver 2 cards de ubicación:
+      | Ciudad    | Dirección      |
+      | Mercedes  | Calle 27 Nº 279 |
+      | Chivilcoy | Colón 75        |
+    And cada card debe tener un link a Google Maps que abre en pestaña nueva
 
   # ═══════════════════════════════════════
   # WHATSAPP WIDGET
