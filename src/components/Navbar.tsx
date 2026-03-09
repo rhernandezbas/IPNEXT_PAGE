@@ -22,16 +22,28 @@ export default function Navbar() {
         </span>
       </div>
 
-      <div className="flex items-center gap-6 md:gap-10">
+      <div className="flex items-center gap-6 md:gap-8">
         <a
           href="#planes"
-          className="text-ipnext-text font-semibold text-[15px] hover:text-ipnext-orange transition-colors"
+          className="text-ipnext-text font-semibold text-[15px] hover:text-ipnext-orange transition-colors hidden md:block"
         >
           Planes
         </a>
         <a
+          href="#empresas"
+          className="text-ipnext-text font-semibold text-[15px] hover:text-ipnext-orange transition-colors hidden md:block"
+        >
+          Empresas
+        </a>
+        <a
+          href="#servicios"
+          className="text-ipnext-text font-semibold text-[15px] hover:text-ipnext-orange transition-colors hidden md:block"
+        >
+          Servicios
+        </a>
+        <a
           href="#contacto"
-          className="text-ipnext-text font-semibold text-[15px] hover:text-ipnext-orange transition-colors"
+          className="text-ipnext-text font-semibold text-[15px] hover:text-ipnext-orange transition-colors hidden md:block"
         >
           Contacto
         </a>
