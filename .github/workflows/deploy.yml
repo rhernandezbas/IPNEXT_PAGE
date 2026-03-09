@@ -33,6 +33,14 @@ jobs:
             --restart unless-stopped \
             --network easypanel \
             -p 7777:7777 \
+            --label "traefik.enable=true" \
+            --label "traefik.http.routers.ipnext-http.rule=Host(\`ipnext.com.ar\`) || Host(\`www.ipnext.com.ar\`) || Host(\`web.ipnext.com.ar\`) || Host(\`ipnext.net.ar\`) || Host(\`www.ipnext.net.ar\`)" \
+            --label "traefik.http.routers.ipnext-http.entrypoints=http" \
+            --label "traefik.http.routers.ipnext-http.middlewares=redirect-to-https" \
+            --label "traefik.http.routers.ipnext-https.rule=Host(\`ipnext.com.ar\`) || Host(\`www.ipnext.com.ar\`) || Host(\`web.ipnext.com.ar\`) || Host(\`ipnext.net.ar\`) || Host(\`www.ipnext.net.ar\`)" \
+            --label "traefik.http.routers.ipnext-https.entrypoints=https" \
+            --label "traefik.http.routers.ipnext-https.tls.certresolver=letsencrypt" \
+            --label "traefik.http.services.ipnext-landing.loadbalancer.server.port=7777" \
             ipnext-landing:latest
 
       - name: Verificar que el contenedor está corriendo
