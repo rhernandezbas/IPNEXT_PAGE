@@ -8,14 +8,19 @@ export default function Navbar() {
       role="navigation"
       aria-label="Navegación principal"
     >
-      <Image
-        src="/Gemini_Generated_Image_qo1z7yqo1z7yqo1z.png"
-        alt="IPNEXT"
-        width={120}
-        height={48}
-        priority
-        className="object-contain"
-      />
+      <div className="flex items-center gap-2">
+        <Image
+          src="/logo.png"
+          alt="IPNEXT logo"
+          width={36}
+          height={36}
+          priority
+          className="object-contain"
+        />
+        <span className="text-ipnext-text font-extrabold text-2xl tracking-[4px]">
+          IPNEXT
+        </span>
+      </div>
 
       <div className="flex items-center gap-6 md:gap-8">
         <a
