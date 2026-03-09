@@ -1,12 +1,24 @@
 export default function Hero() {
   return (
-    <section
-      className="relative flex flex-col items-center justify-center min-h-[700px] gap-8 px-6 md:px-16 lg:px-[120px] py-20 text-center overflow-hidden"
-      style={{
-        background: "linear-gradient(to bottom, #1a0a00 0%, #0A0A0A 100%)",
-      }}
-    >
-      {/* Background gradient overlay */}
+    <section className="relative flex flex-col items-center justify-center min-h-[700px] gap-8 px-6 md:px-16 lg:px-[120px] py-20 text-center overflow-hidden">
+
+      {/* ── Video de fondo ── */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src="/hero-bg.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
+
+      {/* ── Overlay oscuro sobre el video ── */}
+      <div
+        className="absolute inset-0"
+        style={{ background: "linear-gradient(to bottom, #0A0A0ABB 0%, #0A0A0AEE 100%)" }}
+      />
+
+      {/* ── Tinte naranja sutil ── */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -15,6 +27,7 @@ export default function Hero() {
         }}
       />
 
+      {/* ── Contenido ── */}
       <h1 className="relative text-ipnext-text font-black text-5xl md:text-6xl lg:text-[72px] leading-[1.1] max-w-4xl">
         Conéctate a un mundo
         <br />
