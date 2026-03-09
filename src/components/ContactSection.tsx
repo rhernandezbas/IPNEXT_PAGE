@@ -21,7 +21,7 @@ const contacts = [
     btnText: "Llamar ahora",
     btnBg: "#4A2000",
     btnTextColor: "#FFAA44",
-    href: "tel:+5492346523280",
+    href: "tel:+54901150310800",
     external: false,
   },
   {
