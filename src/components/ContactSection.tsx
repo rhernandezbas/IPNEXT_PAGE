@@ -1,4 +1,5 @@
 import { MessageCircle, Phone, Mail } from "lucide-react";
+import { WA_LINKS } from "@/lib/whatsapp";
 
 const contacts = [
   {
@@ -9,7 +10,8 @@ const contacts = [
     btnText: "Escribinos",
     btnBg: "#FF6B00",
     btnTextColor: "#FFFFFF",
-    href: "https://wa.me/",
+    href: WA_LINKS.general,
+    external: true,
   },
   {
     icon: Phone,
@@ -19,7 +21,8 @@ const contacts = [
     btnText: "Llamar ahora",
     btnBg: "#4A2000",
     btnTextColor: "#FFAA44",
-    href: "tel:",
+    href: "tel:+5492346523280",
+    external: false,
   },
   {
     icon: Mail,
@@ -30,6 +33,7 @@ const contacts = [
     btnBg: "#2A1500",
     btnTextColor: "#FFB366",
     href: "mailto:info@ipnext.com",
+    external: false,
   },
 ];
 
@@ -69,6 +73,8 @@ export default function ContactSection() {
                 </p>
                 <a
                   href={c.href}
+                  target={c.external ? "_blank" : undefined}
+                  rel={c.external ? "noopener noreferrer" : undefined}
                   className="px-7 py-3 rounded-full font-semibold text-sm transition-opacity hover:opacity-80"
                   style={{ backgroundColor: c.btnBg, color: c.btnTextColor }}
                 >

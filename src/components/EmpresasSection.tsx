@@ -1,10 +1,10 @@
 import { Building2, Zap, ShieldCheck, Headphones, ArrowRight } from "lucide-react";
+import { WA_LINKS } from "@/lib/whatsapp";
 
 const plans = [
   {
     name: "PYME",
     speed: "200 Mbps",
-    symmetric: true,
     badge: "IDEAL PARA PYMES",
     badgeBg: "#1A1A1A",
     badgeText: "#9CA3AF",
@@ -15,11 +15,11 @@ const plans = [
     cardBg: "#141414",
     borderColor: "#2A2A2A",
     borderWidth: 1,
+    waHref: WA_LINKS.empresasPyme,
   },
   {
     name: "CORPORATIVO",
     speed: "500 Mbps",
-    symmetric: true,
     badge: "MÁS ELEGIDO",
     badgeBg: "#FFFFFF33",
     badgeText: "#FFFFFF",
@@ -31,11 +31,11 @@ const plans = [
     cardBg: "#E87722",
     borderColor: "#FF8C00",
     borderWidth: 2,
+    waHref: WA_LINKS.empresasCorporativo,
   },
   {
     name: "ENTERPRISE",
     speed: "1 Gbps",
-    symmetric: true,
     badge: "MÁXIMA CAPACIDAD",
     badgeBg: "#2A1500",
     badgeText: "#FF8C00",
@@ -46,6 +46,7 @@ const plans = [
     cardBg: "#1C1C1C",
     borderColor: "#2A2A2A",
     borderWidth: 1,
+    waHref: WA_LINKS.empresasEnterprise,
   },
 ];
 
@@ -148,12 +149,15 @@ export default function EmpresasSection() {
               </ul>
 
               {/* CTA */}
-              <button
-                className="w-full py-[14px] rounded-full font-semibold text-base mt-auto transition-opacity hover:opacity-90"
+              <a
+                href={plan.waHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-[14px] rounded-full font-semibold text-base mt-auto text-center transition-opacity hover:opacity-90"
                 style={{ backgroundColor: plan.ctaBg, color: plan.ctaTextColor }}
               >
                 {plan.ctaText}
-              </button>
+              </a>
             </div>
           ))}
         </div>

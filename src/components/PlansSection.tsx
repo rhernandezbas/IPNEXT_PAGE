@@ -1,3 +1,5 @@
+import { WA_LINKS } from "@/lib/whatsapp";
+
 function FiberCard({
   speed,
   badge,
@@ -5,7 +7,6 @@ function FiberCard({
   badgeText,
   description,
   descColor,
-  featured,
   recBadge,
   ctaText,
   ctaBg,
@@ -14,6 +15,7 @@ function FiberCard({
   borderColor,
   borderWidth = 1,
   width,
+  waHref,
 }: {
   speed: string;
   badge: string;
@@ -21,7 +23,6 @@ function FiberCard({
   badgeText: string;
   description: string;
   descColor: string;
-  featured?: boolean;
   recBadge?: boolean;
   ctaText: string;
   ctaBg: string;
@@ -30,6 +31,7 @@ function FiberCard({
   borderColor: string;
   borderWidth?: number;
   width?: string;
+  waHref: string;
 }) {
   return (
     <div
@@ -40,7 +42,6 @@ function FiberCard({
         maxWidth: width || "360px",
       }}
     >
-      {/* Top row */}
       <div className="flex items-center justify-between">
         <span
           className="text-[11px] font-bold tracking-[2px] px-[14px] py-[6px] rounded-full"
@@ -55,21 +56,21 @@ function FiberCard({
         )}
       </div>
 
-      {/* Speed */}
       <div className="text-white font-black text-5xl">{speed}</div>
 
-      {/* Description */}
       <p className="text-sm leading-relaxed" style={{ color: descColor }}>
         {description}
       </p>
 
-      {/* CTA */}
-      <button
-        className="w-full py-[14px] rounded-full font-semibold text-base transition-opacity hover:opacity-90"
+      <a
+        href={waHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-full py-[14px] rounded-full font-semibold text-base text-center transition-opacity hover:opacity-90"
         style={{ backgroundColor: ctaBg, color: ctaTextColor }}
       >
         {ctaText}
-      </button>
+      </a>
     </div>
   );
 }
@@ -89,6 +90,7 @@ function WirelessCard({
   cardBg,
   borderColor,
   borderWidth = 1,
+  waHref,
 }: {
   speed: string;
   badge: string;
@@ -104,6 +106,7 @@ function WirelessCard({
   cardBg: string;
   borderColor: string;
   borderWidth?: number;
+  waHref: string;
 }) {
   return (
     <div
@@ -134,12 +137,15 @@ function WirelessCard({
         {description}
       </p>
 
-      <button
-        className="w-full py-3 rounded-full font-semibold text-[15px] transition-opacity hover:opacity-90"
+      <a
+        href={waHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-full py-3 rounded-full font-semibold text-[15px] text-center transition-opacity hover:opacity-90"
         style={{ backgroundColor: ctaBg, color: ctaTextColor }}
       >
         {ctaText}
-      </button>
+      </a>
     </div>
   );
 }
@@ -151,7 +157,6 @@ export default function PlansSection() {
       className="bg-ipnext-bg-sec py-20 px-6 md:px-10 lg:px-[120px]"
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-12">
-        {/* Fiber title */}
         <div className="flex flex-col gap-4 text-center">
           <h2 className="text-ipnext-text font-extrabold text-4xl lg:text-[44px]">
             Planes para tu velocidad
@@ -161,7 +166,6 @@ export default function PlansSection() {
           </p>
         </div>
 
-        {/* Fiber cards */}
         <div className="flex flex-col md:flex-row gap-6 justify-center items-center md:items-stretch">
           <FiberCard
             speed="300 Mbps"
@@ -175,6 +179,7 @@ export default function PlansSection() {
             ctaTextColor="#FFAA44"
             cardBg="#1C1C1C"
             borderColor="#2A2A2A"
+            waHref={WA_LINKS.fibra300}
           />
           <FiberCard
             speed="600 Mbps"
@@ -183,7 +188,6 @@ export default function PlansSection() {
             badgeText="#FFFFFF"
             description="Perfecta para múltiples dispositivos, gaming y videoconferencias simultáneas."
             descColor="#FFE4CC"
-            featured
             recBadge
             ctaText="¡Lo Quiero Ahora!"
             ctaBg="#FFFFFF"
@@ -192,6 +196,7 @@ export default function PlansSection() {
             borderColor="#FF8C00"
             borderWidth={2}
             width="380px"
+            waHref={WA_LINKS.fibra600}
           />
           <FiberCard
             speed="1 Gbps"
@@ -205,10 +210,10 @@ export default function PlansSection() {
             ctaTextColor="#FF8C00"
             cardBg="#1C1C1C"
             borderColor="#2A2A2A"
+            waHref={WA_LINKS.fibra1000}
           />
         </div>
 
-        {/* Wireless title */}
         <div className="flex flex-col gap-3 text-center mt-4">
           <h3 className="text-ipnext-muted font-extrabold text-3xl lg:text-[36px]">
             Planes Wireless
@@ -218,7 +223,6 @@ export default function PlansSection() {
           </p>
         </div>
 
-        {/* Wireless cards */}
         <div className="flex flex-col md:flex-row gap-6 justify-center items-center md:items-stretch">
           <WirelessCard
             speed="20/10 Mbps"
@@ -233,6 +237,7 @@ export default function PlansSection() {
             ctaTextColor="#D1D5DB"
             cardBg="#141414"
             borderColor="#2A2A2A"
+            waHref={WA_LINKS.wirelessBasico}
           />
           <WirelessCard
             speed="30/20 Mbps"
@@ -249,6 +254,7 @@ export default function PlansSection() {
             cardBg="#161616"
             borderColor="#FF6B00"
             borderWidth={2}
+            waHref={WA_LINKS.wirelessPlus}
           />
           <WirelessCard
             speed="50/30 Mbps"
@@ -263,6 +269,7 @@ export default function PlansSection() {
             ctaTextColor="#FFAA44"
             cardBg="#141414"
             borderColor="#2A2A2A"
+            waHref={WA_LINKS.wirelessPro}
           />
         </div>
       </div>

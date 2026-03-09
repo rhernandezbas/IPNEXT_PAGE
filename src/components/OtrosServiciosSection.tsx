@@ -1,6 +1,7 @@
 "use client";
 
 import { Camera, ShieldAlert, Server, ArrowRight } from "lucide-react";
+import { WA_LINKS } from "@/lib/whatsapp";
 
 const services = [
   {
@@ -25,6 +26,7 @@ const services = [
     cardBg: "#141414",
     borderColor: "#2A2A2A",
     accentBorder: "#FF8C00",
+    waHref: WA_LINKS.camaras,
   },
   {
     icon: ShieldAlert,
@@ -48,7 +50,7 @@ const services = [
     cardBg: "#141414",
     borderColor: "#2A2A2A",
     accentBorder: "#4ADE80",
-    featured: true,
+    waHref: WA_LINKS.alarmas,
   },
   {
     icon: Server,
@@ -72,6 +74,7 @@ const services = [
     cardBg: "#141414",
     borderColor: "#2A2A2A",
     accentBorder: "#A78BFA",
+    waHref: WA_LINKS.vps,
   },
 ];
 
@@ -152,7 +155,9 @@ export default function OtrosServiciosSection() {
 
                 {/* CTA */}
                 <a
-                  href="#contacto"
+                  href={s.waHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-auto w-full py-3 rounded-full font-semibold text-sm text-center transition-opacity hover:opacity-80"
                   style={{ backgroundColor: s.ctaBg, color: s.ctaTextColor }}
                 >
@@ -177,7 +182,9 @@ export default function OtrosServiciosSection() {
             </p>
           </div>
           <a
-            href="#contacto"
+            href={WA_LINKS.general}
+            target="_blank"
+            rel="noopener noreferrer"
             className="shrink-0 bg-ipnext-orange text-white font-semibold text-sm px-8 py-3 rounded-full hover:bg-ipnext-orange-l transition-colors whitespace-nowrap"
           >
             Hablar con un asesor

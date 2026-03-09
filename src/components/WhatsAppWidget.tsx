@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { MessageCircle, X } from "lucide-react";
+import { WA_LINKS } from "@/lib/whatsapp";
 
 export default function WhatsAppWidget() {
   const [open, setOpen] = useState(false);
@@ -45,7 +46,7 @@ export default function WhatsAppWidget() {
 
           {/* CTA */}
           <a
-            href="https://wa.me/"
+            href={WA_LINKS.general}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold text-sm py-3 rounded-full hover:bg-[#1da851] transition-colors"
