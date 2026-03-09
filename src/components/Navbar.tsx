@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Navbar() {
   return (
     <nav
@@ -6,9 +8,14 @@ export default function Navbar() {
       role="navigation"
       aria-label="Navegación principal"
     >
-      <span className="text-ipnext-muted text-xs font-medium tracking-widest uppercase opacity-60">
-        Gemini Generated
-      </span>
+      <Image
+        src="/Gemini_Generated_Image_qo1z7yqo1z7yqo1z.png"
+        alt="IPNEXT"
+        width={120}
+        height={48}
+        priority
+        className="object-contain"
+      />
 
       <div className="flex items-center gap-6 md:gap-8">
         <a
