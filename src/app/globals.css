@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ipnext-bg: #0A0A0A;
+  --color-ipnext-bg-sec: #111111;
+  --color-ipnext-bg-card: #1A1A1A;
+  --color-ipnext-bg-dark: #0D0D0D;
+  --color-ipnext-bg-faq: #161616;
+  --color-ipnext-bg-card-dark: #1C1C1C;
+  --color-ipnext-orange: #FF6B00;
+  --color-ipnext-orange-l: #FF8C00;
+  --color-ipnext-orange-xl: #FFB366;
+  --color-ipnext-orange-warm: #FFAA44;
+  --color-ipnext-orange-dim: #E87722;
+  --color-ipnext-orange-cta: #E07000;
+  --color-ipnext-text: #FFFFFF;
+  --color-ipnext-muted: #94A3B8;
+  --color-ipnext-subtle: #64748B;
+  --color-ipnext-dim: #334155;
+  --color-ipnext-border: #2A2A2A;
+  --color-ipnext-green: #25D366;
+  --color-ipnext-violet: #A78BFA;
+  --color-ipnext-emerald: #4ADE80;
+  --color-ipnext-dark-orange: #4A2000;
+  --color-ipnext-darker-orange: #2A1500;
+  --color-ipnext-darkest-orange: #3A1800;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0A0A0A;
+  color: #FFFFFF;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

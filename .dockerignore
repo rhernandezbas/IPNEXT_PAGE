@@ -1,0 +1,14 @@
+.git
+.gitignore
+.next
+node_modules
+archivos
+README.md
+Dockerfile
+.dockerignore
+.github
+docs
+.cliplin
+.claude
+.cursor
+*.log

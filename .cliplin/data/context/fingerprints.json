@@ -1,0 +1,46 @@
+{
+  ".cliplin/knowledge/cliplin-framework/docs/adrs/000-cliplin-framework.md": {
+    "fingerprint": "310e532594465948e0563fc5733e7f0b5e0fe748f57435a6ebc095fd390879f7",
+    "last_indexed_at": "2026-03-09T04:07:48.067019+00:00"
+  },
+  ".cliplin/knowledge/cliplin-framework/docs/adrs/001-ts4-format.md": {
+    "fingerprint": "4e5304880489a8f92e410b03b39a655b01438c5c2e924e3c3d37068084197e1d",
+    "last_indexed_at": "2026-03-09T04:07:48.229468+00:00"
+  },
+  ".cliplin/knowledge/cliplin-framework/docs/adrs/002-ui-intent-format.md": {
+    "fingerprint": "579f16fdeb5617edef00f49deb0fc218906df538e6d9ba51a4d6d5a6c70fab07",
+    "last_indexed_at": "2026-03-09T04:07:48.391455+00:00"
+  },
+  ".cliplin/knowledge/cliplin-framework/docs/adrs/003-tdr-format.md": {
+    "fingerprint": "3064680f43d123d4550a811c5ab5165c01abefb06860eae48560e4db6ddd8d9e",
+    "last_indexed_at": "2026-03-09T04:07:48.553236+00:00"
+  },
+  ".cliplin/knowledge/cliplin-framework/docs/adrs/005-knowledge-packages.md": {
+    "fingerprint": "8db611655e8066230e402c2ee308ac892cebd45ae7e34029f59f54c86a271d08",
+    "last_indexed_at": "2026-03-09T04:07:48.717754+00:00"
+  },
+  "docs/adrs/010-frontend-stack.md": {
+    "fingerprint": "bdbc20bad964659a06893a254addf636068fab0b0efabeda337412019419851c",
+    "last_indexed_at": "2026-03-09T04:30:16.912626+00:00"
+  },
+  "docs/business/ipnext-overview.md": {
+    "fingerprint": "77a068ae9fb460658ad76d2114536da6e7e570be84a4a30a188624f317cb09b0",
+    "last_indexed_at": "2026-03-09T04:30:17.087343+00:00"
+  },
+  "docs/features/ipnext-landing.feature": {
+    "fingerprint": "827a5ab19d72db855de9ddca14b75db43cd7edcf1467ca81afe118e435e42503",
+    "last_indexed_at": "2026-03-09T04:30:17.274436+00:00"
+  },
+  "docs/tdrs/tdr-001-component-architecture.md": {
+    "fingerprint": "79346000b1e8d456b66ebc076ac818c31fb1121ca92fd43aa9cf55591b3eb17a",
+    "last_indexed_at": "2026-03-09T04:30:17.445574+00:00"
+  },
+  "docs/tdrs/tdr-002-design-tokens.md": {
+    "fingerprint": "e07582227edd82dc035776289f45a83fbe93bb12a5ce219707d0c5d668e17f00",
+    "last_indexed_at": "2026-03-09T04:30:17.614771+00:00"
+  },
+  "docs/ui-intent/landing-page.yaml": {
+    "fingerprint": "94a19ba1d7a4c4d315111095a16f28dddb236d7a02c841095ce13759650b818a",
+    "last_indexed_at": "2026-03-09T04:30:17.785723+00:00"
+  }
+}

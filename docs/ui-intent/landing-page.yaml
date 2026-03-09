@@ -1,0 +1,181 @@
+intent: ipnext-landing-page
+version: "1.0"
+date: "2026-03-09"
+theme: dark-orange
+
+layout:
+  max_width: 1440px
+  content_max_width: 1280px
+  padding_horizontal:
+    desktop: 120px
+    tablet: 64px
+    mobile: 24px
+
+component_hierarchy:
+  - Navbar
+  - Hero
+  - PlansSection
+  - FeaturesSection
+  - StatsSection
+  - FAQSection
+  - ContactSection
+  - Footer
+  - WhatsAppWidget  # fixed position, always visible
+
+components:
+  Navbar:
+    type: server
+    position: sticky
+    z_index: 50
+    height: 80px
+    background: "#0A0A0ACC"
+    backdrop_filter: blur
+    layout: flex-row
+    justify: space-between
+    align: center
+    elements:
+      - logo: "IPNEXT" (text, weight 800, size 28, letter-spacing 4px)
+      - nav_links: [Planes, Contacto] (scroll to sections)
+      - cta_button: "¡Lo Quiero!" (pill, bg orange, scroll to plans)
+
+  Hero:
+    type: server
+    height: 700px
+    background: image + overlay "#0A0A0A99"
+    layout: flex-col
+    justify: center
+    align: center
+    gap: 32px
+    elements:
+      - title: "Conéctate a un mundo sin límites" (72px, weight 900, center)
+      - subtitle: text describing 1Gbps and free installation (18px, center, opacity 80%)
+      - cta_button: "¡Lo Quiero!" (pill, white bg, orange text)
+
+  PlansSection:
+    type: server
+    id: planes
+    background: "#111111"
+    padding: "80px 120px"
+    gap: 48px
+    sub_sections:
+      fibra:
+        title: "Planes para tu velocidad" (44px, weight 800)
+        subtitle: text (18px, muted)
+        cards:
+          - plan_card_basic: {speed: "300 Mbps", badge: "FIBRA", featured: false}
+          - plan_card_featured: {speed: "600 Mbps", badge: "MÁS POPULAR", featured: true, rec_badge: "RECOMENDADO"}
+          - plan_card_ultra: {speed: "1 Gbps", badge: "ULTRA", featured: false}
+      wireless:
+        title: "Planes Wireless" (36px, weight 800, muted)
+        subtitle: text (16px, subtle)
+        cards:
+          - wc_basic: {speed: "20/10 Mbps", badge: "WIRELESS BÁSICO", featured: false}
+          - wc_plus: {speed: "30/20 Mbps", badge: "WIRELESS PLUS", featured: true}
+          - wc_pro: {speed: "50/30 Mbps", badge: "WIRELESS PRO", featured: false}
+
+  FeaturesSection:
+    type: server
+    id: features
+    background: "#0A0A0A"
+    padding: "80px 120px"
+    gap: 64px
+    title: "¿Por qué IPNEXT?" (44px, weight 800)
+    cards:
+      - {icon: zap, icon_color: orange-l, title: "Velocidad Extrema", desc: "Hasta 1 Gbps sin throttling"}
+      - {icon: shield-check, icon_color: emerald, title: "Red Segura", desc: "Protección integrada"}
+      - {icon: headphones, icon_color: violet, title: "Soporte 24/7", desc: "Técnicos disponibles todo el día"}
+
+  StatsSection:
+    type: server
+    background: "#111111"
+    padding: "60px 120px"
+    layout: flex-row
+    justify: space-between
+    align: center
+    stats:
+      - {value: "10,000+", label: "Clientes Satisfechos", color: orange-l}
+      - {value: "99.9%", label: "Uptime Garantizado", color: orange-l}
+      - {value: "1 Gbps", label: "Velocidad Máxima", color: orange-xl}
+
+  FAQSection:
+    type: client  # requires useState
+    id: faq
+    background: "#0D0D0D"
+    padding: "80px 200px"
+    gap: 48px
+    label: "PREGUNTAS FRECUENTES" (13px, weight 700, letter-spacing 3px, orange-l)
+    title: "Todo lo que necesitas saber" (44px, weight 800)
+    state_model:
+      open_item: string | null  # ID of currently open FAQ item
+      behavior: accordion  # only one item open at a time
+    items:
+      - id: faq-1
+        question: "¿Cómo contrato el servicio?"
+        answer: multi-line (3 steps)
+      - id: faq-2
+        question: "Soporte Técnico Online"
+        answer: single paragraph
+      - id: faq-3
+        question: "¿Cómo pago el servicio?"
+        answer: single paragraph
+
+  ContactSection:
+    type: server
+    id: contacto
+    background: "#0A0A0A"
+    padding: "80px 120px"
+    gap: 56px
+    label: "CONTACTO" (13px, weight 700, letter-spacing 3px, orange)
+    title: "Estamos para ayudarte" (44px, weight 800)
+    subtitle: text (18px, muted)
+    cards:
+      - {icon: message-circle, icon_color: orange, title: "WhatsApp", btn: "Escribinos", btn_bg: orange}
+      - {icon: phone, icon_color: orange-l, title: "Teléfono", btn: "Llamar ahora", btn_bg: dark-orange}
+      - {icon: mail, icon_color: violet, title: "Email / Web", btn: "Consultar", btn_bg: darker-orange}
+
+  Footer:
+    type: server
+    background: "#050505"
+    padding: "40px 120px"
+    layout: flex-row
+    justify: space-between
+    align: center
+    elements:
+      - logo: "IPNEXT" (22px, weight 800, letter-spacing 4px)
+      - links: [Suscríbete, Estado, Ayuda, Privacidad] (14px, subtle)
+      - copyright: "© 2026 IPNEXT. Todos los derechos reservados." (13px, dim)
+
+  WhatsAppWidget:
+    type: client  # requires useState
+    position: fixed
+    bottom: 24px
+    right: 24px
+    z_index: 100
+    state_model:
+      open: boolean
+      initial: false
+    elements:
+      fab_button:
+        bg: green (#25D366)
+        icon: message-circle (lucide)
+        size: 60px
+        shape: circle
+        aria_label: "Contactar por WhatsApp"
+      chat_bubble:
+        visible: when open === true
+        animation: fade-in + slide-up
+        bg: "#1A1A1A"
+        border: ipnext-border
+        border_radius: 16px
+        close_button: top-right corner
+        content:
+          - greeting: "¡Hola! 👋"
+          - message: "¿Querés contratar o tenés una consulta? Escribinos por WhatsApp y te respondemos al toque."
+          - cta_button: "Abrir WhatsApp" (bg green, opens wa.me link)
+
+accessibility:
+  nav: {role: navigation, aria_label: "Navegación principal"}
+  sections: {landmark: section, id_for_deep_linking: true}
+  faq_items: {aria_expanded: true, aria_controls: "answer-id"}
+  whatsapp_fab: {aria_label: "Contactar por WhatsApp"}
+  skip_link: {text: "Saltar al contenido principal", href: "#main"}
